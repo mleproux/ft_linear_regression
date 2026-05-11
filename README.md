@@ -20,9 +20,9 @@ pip install numpy pandas matplotlib
 ```
 
 # Reference
-[W3Schools - Python](https://www.w3schools.com/python)
-[From Theory to Code: Implementing Linear Regression Training Techniques](https://medium.com/data-science-collectivefrom-theory-to-code-implementing-linear-regression-training-techniques-011e2534d445#6a16)
-[FORMATION MACHINE LEARNING (2019) - ML#1](https://youtu.be/EUD07IiviJg?si=WR3ZShIc8Et1qVM4)
+[W3Schools - Python](https://www.w3schools.com/python)__
+[From Theory to Code: Implementing Linear Regression Training Techniques](https://medium.com/data-science-collectivefrom-theory-to-code-implementing-linear-regression-training-techniques-011e2534d445#6a16)__
+[FORMATION MACHINE LEARNING (2019) - ML#1](https://youtu.be/EUD07IiviJg?si=WR3ZShIc8Et1qVM4)__
 [How to measure accuracy of Regression Models | Data Science Interview Questions and Answers](https://www.youtube.com/watch?v=mHuUD1QvANE)
 
 # Review
