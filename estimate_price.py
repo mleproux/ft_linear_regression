@@ -23,7 +23,7 @@ def get_training_data(file_name: str) -> any:
       
 def estimate_price(mileage: float, theta: tuple) -> float:
     """Estimate price using a linear model"""
-    return theta[0] + (theta[1] * mileage)
+    return theta[0] + mileage * theta[1]
 
 
 def main():
@@ -33,8 +33,8 @@ def main():
     - Estimate price from prompted mileage
     """
     while(True):
-        user_input = input("Please provide a mileage : ")
         try:
+            user_input = input("Please provide a mileage : ")
             mileage = float(user_input)
             if mileage < 0:
                 raise ValueError
@@ -43,6 +43,7 @@ def main():
             print("Incorrect input. Please provide a valid input (positive float).")
         except KeyboardInterrupt:
             print("\nProgram terminated by user.")
+            return 1
     
     try:  
         theta, mean, std = get_training_data("./utils/training.json")

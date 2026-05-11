@@ -19,7 +19,7 @@ def get_data(file_name: str):
     std = np.std(x)
     
     x = (x - np.mean(x)) / np.std(x)
-    x_bias = np.hstack((x, np.ones(x.shape)))
+    x_bias = np.hstack((np.ones((x.shape[0], 1)), x))
     
     return x, y, x_bias, mean, std
 
@@ -27,8 +27,8 @@ def save_training_data(theta, mean, std):
     """Save the training data in a JSON file.
     """
     data = {
-        "theta0": float(theta[1, 0]),
-        "theta1": float(theta[0, 0]),
+        "theta0": float(theta[0, 0]),
+        "theta1": float(theta[1, 0]),
         "mean": float(mean),
         "std": float(std)
     }
@@ -38,7 +38,8 @@ def save_training_data(theta, mean, std):
 
 
 def model(x, theta):
-    """Compute linear prediction"""
+    """Compute linear prediction
+    """
     return x.dot(theta)
 
 
@@ -53,6 +54,7 @@ def gradient_descent(x, y, theta, learning_rate, n_iterations):
     """Run gradient descent to minimize the mean squared error cost.
     Returns the optimized theta and the cost history over all iterations.
     """
+    print(x)
     m = len(y)
     cost_history = np.zeros(n_iterations)
     
@@ -81,7 +83,7 @@ def main():
     try:
         theta = np.random.randn(2, 1)
         n_iterations = 1000
-        learning_rate = 0.01
+        learning_rate = 0.07
         new_theta, cost_history = gradient_descent(x_bias, y, theta, learning_rate, n_iterations)
         
         save_training_data(new_theta, mean, std)
