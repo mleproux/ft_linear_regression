@@ -1,11 +1,10 @@
-import sys
 import json
 
 
-
-
 def get_training_data(file_name: str) -> any:
-    """Retrieve theta parameters and standardization values (mean, std) from a JSON file."""
+    """Retrieve theta parameters and standardization values (mean, std)
+    from a JSON file.
+    """
     json_file = open(file_name, "r")
     data = json.load(json_file)
     json_file.close()
@@ -50,17 +49,15 @@ def main():
     except FileNotFoundError:
         print(FileNotFoundError.__name__ + ':', "Can´t access training.json file. Does it exist in ./utils repository ?")
         return 1
-    except PermissionError:
-        print(PermissionError.__name__ + ':', "No permission to access training.json file.")
-        return 1
     except Exception as error:
         print(Exception.__name__ + ":", error)
 
-    norm_mileage = (mileage - mean) / std
-    result = estimate_price(norm_mileage, theta)
+    stand_mileage = (mileage - mean) / std
+    result = estimate_price(stand_mileage, theta)
     
-    print(f"Your price is estimated at : ${max(0, int(result))}$")
+    print(f"Your price is estimated at : {max(0, int(result))}$")
 
 
-if __name__ == '__main__' :
+if __name__ == '__main__':
 	main()
+ 
