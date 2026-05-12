@@ -16,7 +16,7 @@ This repo contains the 42 School project ¨ft_linear_regression¨, an introducti
 
 ### Installation 
 ```sh
-pip install numpy pandas matplotlib
+pip install numpy matplotlib
 ```
 
 # Reference
